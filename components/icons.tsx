@@ -45,3 +45,6 @@ export const Fire = ({ color }: { color: string }) => (
     <path d="M12 22c4 0 7-2.7 7-6.8 0-3.6-2.4-5.6-4-8.2-.6 2-1.6 3-2.8 3.4C12.6 7 11 4.4 8.5 2 8.8 6 5 8.7 5 14.7 5 19 8 22 12 22z" fill={color} />
   </svg>
 );
+
+export const Heart = ({ style }: P) => <Svg style={style}><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z" /></Svg>;
+export const Mail = ({ style }: P) => <Svg style={style}><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M3.5 7l8.5 6 8.5-6" /></Svg>;

@@ -21,23 +21,6 @@ a:hover .rbtn{transform:rotate(45deg)}
 .hov:hover .ph>i{transform:scale(1.05);filter:saturate(1.25)}
 .hl{text-decoration-thickness:1px;text-underline-offset:6px}
 .hov:hover .hl{text-decoration-line:underline}
-.t1>i{background-image:url(/img/t1.jpg)}
-.t2>i{background-image:url(/img/t2.jpg)}
-.t3>i{background-image:url(/img/t3.jpg)}
-.t4>i{background-image:url(/img/t4.jpg)}
-.t5>i{background-image:url(/img/t5.jpg)}
-.t6>i{background-image:url(/img/t6.jpg)}
-.t7>i{background-image:url(/img/t7.jpg)}
-.t8>i{background-image:url(/img/t8.jpg)}
-.t9>i{background-image:url(/img/t9.jpg)}
-.t10>i{background-image:url(/img/t10.jpg)}
-.t11>i{background-image:url(/img/t11.jpg)}
-.t12>i{background-image:url(/img/t12.jpg)}
-.t13>i{background-image:url(/img/t13.jpg)}
-.t14>i{background-image:url(/img/t14.jpg)}
-.t15>i{background-image:url(/img/t15.jpg)}
-.t16>i{background-image:url(/img/t16.jpg)}
-.t17>i{background-image:url(/img/t17.jpg)}
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.78) 100%);z-index:1}
 .hdr{height:96px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;padding:0 24px;gap:16px;position:relative;z-index:30}
 .live{display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;border-radius:999px;height:50px;padding:0 4px 0 18px;border:0;font:inherit;font-size:17px;cursor:pointer;flex:none}
@@ -56,7 +39,7 @@ a:hover .rbtn{transform:rotate(45deg)}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .bento{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:8px}
 .col{display:flex;flex-direction:column;gap:8px;min-width:0}
-.soc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.soc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .soc a{height:84px;border-radius:22px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s ease}
 .soc a:hover{transform:translateY(-2px)}
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -85,3 +68,23 @@ a:hover .rbtn{transform:rotate(45deg)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @container (max-width:1180px){.nav{display:none}.bento{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.lead{grid-column:1/-1}.g4,.g5{grid-template-columns:repeat(2,minmax(0,1fr))}.wl,.cat{grid-template-columns:minmax(0,1fr)}}
 @container (max-width:720px){.bento{grid-template-columns:minmax(0,1fr)}.g4,.g5{grid-template-columns:minmax(0,1fr)}.sec{padding:24px 20px}.lead h1{font-size:44px!important}.hdr .sub{display:none}}
+
+.lead{min-height:880px}
+/* Desktop: fit the whole hero inside the first viewport */
+@media (min-width:1181px){
+.bento{height:calc(100svh - 112px);min-height:640px}
+.bento .lead{min-height:0!important;padding:28px 32px 26px!important}
+.bento .lead h1{font-size:clamp(40px,7.4vh,70px)!important}
+.bento .lead .p2,.bento .col .p2{display:none}
+.bento .gc.hov,.bento .gc{min-height:0}
+.bento .col>a.gc:first-child{padding:20px 24px!important;gap:12px!important;overflow:hidden}
+.bento .col>a.gc:first-child h2{font-size:clamp(26px,4.6vh,40px)!important}
+.bento .c2img{flex:1 1 0;min-height:60px;height:auto!important}
+.bento .voices{padding:16px 24px!important;gap:8px!important}
+.bento .voices .d{font-size:26px!important}
+.bento .soc a{height:clamp(52px,8vh,84px)}
+.bento .vid{height:clamp(150px,22vh,236px)!important;flex:none}
+.bento .stat{min-height:0;padding:14px 16px;gap:6px}
+.bento .stat .d{font-size:clamp(28px,4.6vh,42px)!important}
+.bento .pr{min-height:0!important;padding:10px 24px!important}
+}
