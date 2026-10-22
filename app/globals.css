@@ -53,7 +53,7 @@ a:hover .rbtn{transform:rotate(45deg)}
 .kick{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#555}
 .rule{border:0;border-top:1px solid #e3e3e3;margin:0}
 .wl{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px}
-.ep{display:grid;grid-template-columns:128px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
+.ep{display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
 .shorts{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}
 .short{flex:0 0 214px;aspect-ratio:9/16;border-radius:20px;scroll-snap-align:start;text-decoration:none;color:#fff}
 .cat{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px}
@@ -88,3 +88,7 @@ a:hover .rbtn{transform:rotate(45deg)}
 .bento .stat .d{font-size:clamp(28px,4.6vh,42px)!important}
 .bento .pr{min-height:0!important;padding:10px 24px!important}
 }
+
+.feat{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:32px;align-items:end}
+.feat>.ph{width:100%;align-self:start}
+@container (max-width:720px){.feat{grid-template-columns:minmax(0,1fr)}}

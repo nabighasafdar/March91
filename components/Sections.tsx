@@ -48,19 +48,17 @@ export function WatchListen() {
         <a href={INSTAGRAM_URL} {...ext} className="pill w">All reels <ArrowUR /></a>
       </div>
       <div className="wl">
-        <a href={featured.url} {...ext} className="hov" style={{ display: "flex", flexDirection: "column", gap: 18, color: "#F2F2F2", textDecoration: "none" }}>
-          <div className="ph" style={{ aspectRatio: "16/9", borderRadius: 20 }} role="img" aria-label={featured.title}>
-            <i style={bg(featured.img)} />
+        <a href={featured.url} {...ext} className="hov feat" style={{ color: "#F2F2F2", textDecoration: "none" }}>
+          <div className="ph" style={{ aspectRatio: "4/5", borderRadius: 20 }} role="img" aria-label={featured.title}>
+            <i style={{ ...bg(featured.img), backgroundPosition: "50% 15%" }} />
             <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 2 }}>
-              <span style={{ width: 88, height: 88, borderRadius: "50%", background: "#fff", color: "#111", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Play size={30} /></span>
+              <span style={{ width: 80, height: 80, borderRadius: "50%", background: "#fff", color: "#111", display: "inline-flex", alignItems: "center", justifyContent: "center" }}><Play size={28} /></span>
             </span>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 24, alignItems: "flex-end", flexWrap: "wrap" }}>
-            <div>
-              <div className="kick" style={{ color: "#a8a8a8" }}>{featured.kick} · {featured.fullDate}</div>
-              <h3 className="d hl" style={{ margin: "8px 0 0", fontSize: 40, lineHeight: 1.05, maxWidth: 620 }}>{featured.title}</h3>
-              <p style={{ margin: "10px 0 0", color: "#a8a8a8", fontSize: 17 }}>Follow for more weekly NUST news updates. Videography by @stillsbylina, reporting by @aylaa.ab and @aazmirts.</p>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 14, minWidth: 0 }}>
+            <div className="kick" style={{ color: "#a8a8a8" }}>{featured.kick} · {featured.fullDate}</div>
+            <h3 className="d hl" style={{ margin: 0, fontSize: 52, lineHeight: 1.02 }}>{featured.title}</h3>
+            <p style={{ margin: 0, color: "#a8a8a8", fontSize: 17, lineHeight: 1.5 }}>Follow for more weekly NUST news updates. Videography by @stillsbylina, reporting by @aylaa.ab and @aazmirts.</p>
             <div className="meta" style={{ color: "#a8a8a8" }}><span><Heart />{featured.likes}</span><span><Comment />{featured.comments}</span></div>
           </div>
         </a>
@@ -68,7 +66,7 @@ export function WatchListen() {
           <div className="kick" style={{ color: "#a8a8a8", paddingBottom: 14 }}>More reels</div>
           {episodes.map((e) => (
             <div className="ep hov" key={e.code}>
-              <div className="ph" style={{ aspectRatio: "16/10", borderRadius: 12 }} role="img" aria-label={e.title}><i style={bg(e.img)} /></div>
+              <div className="ph" style={{ aspectRatio: "4/5", borderRadius: 10 }} role="img" aria-label={e.title}><i style={{ ...bg(e.img), backgroundPosition: "50% 15%" }} /></div>
               <div style={{ minWidth: 0 }}>
                 <div style={{ fontSize: 13, color: "#a8a8a8", letterSpacing: ".04em" }}>{e.kick} · {e.date}</div>
                 <a href={e.url} {...ext} className="hl" style={{ color: "#F2F2F2", textDecoration: "none", fontSize: 18, lineHeight: 1.3, display: "block", marginTop: 4 }}>{e.title}</a>
