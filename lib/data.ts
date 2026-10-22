@@ -80,13 +80,5 @@ export const mostRead = [
   { n: "5", title: "The Weekend the Whole City Went to the Sea", read: "6 min" },
 ];
 
-export const issues = [
-  { tone: "t3", name: "Issue 14 — The Night Issue", month: "October 2026", cover: "Who Stays Up?" },
-  { tone: "t5", name: "Issue 13 — Open Country", month: "August 2026", cover: "After the Rain" },
-  { tone: "t6", name: "Issue 12 — Food", month: "June 2026", cover: "Table for Twelve" },
-  { tone: "t10", name: "Issue 11 — Roads", month: "April 2026", cover: "Leaving Town" },
-  { tone: "t4", name: "Issue 10 — Craft", month: "March 2026", cover: "Made by Hand" },
-];
-
 export const tickerText =
   "Karachi's night markets stretch past 2 a.m. as winter arrives. National team names two uncapped spinners for the home series. Lahore literary circle opens applications for young writers. Rupee holds steady ahead of policy meeting. Episode 48 of The Long Table goes live tonight at 9.";

@@ -1,5 +1,5 @@
 import {
-  ACCENT, cats, columnists, episodes, issues, latest, mostRead, shorts, tickerText,
+  ACCENT, cats, columnists, episodes, latest, mostRead, shorts, tickerText,
 } from "@/lib/data";
 import {
   ArrowRight, ArrowUR, Clock, Comment, Eye, Instagram, Play, PlaySm, TikTok, XIcon, YouTubeOutline,
@@ -176,29 +176,6 @@ export function MostRead() {
           </li>
         ))}
       </ol>
-    </section>
-  );
-}
-
-export function Issues() {
-  return (
-    <section className="card sec" aria-labelledby="is-h">
-      <div className="sh"><h2 id="is-h" className="d">The Print Issues</h2><a href="#" className="pill">Browse the archive <ArrowUR /></a></div>
-      <div className="g5">
-        {issues.map((i) => (
-          <a href="#" className="hov" key={i.name} style={{ ...link, display: "flex", flexDirection: "column", gap: 14 }}>
-            <div className={`ph cover ${i.tone}`} role="img" aria-label="Issue cover">
-              <i />
-              <span className="shade" style={{ background: "linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,.6))" }} />
-              <span style={{ position: "absolute", inset: 0, zIndex: 2, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 18, color: "#fff" }}>
-                <span className="d" style={{ fontSize: 44, lineHeight: 1, letterSpacing: ".01em", textAlign: "center", transform: "scaleY(1.12)" }}>MARCH91</span>
-                <span className="d" style={{ fontSize: 26, lineHeight: 1.05 }}>{i.cover}</span>
-              </span>
-            </div>
-            <div><div className="hl" style={{ fontSize: 18 }}>{i.name}</div><div style={{ fontSize: 15, color: "#555" }}>{i.month}</div></div>
-          </a>
-        ))}
-      </div>
     </section>
   );
 }

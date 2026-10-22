@@ -1,6 +1,6 @@
 import { Hero } from "@/components/Hero";
 import {
-  Categories, Footer, Issues, Latest, MostRead, Newsletter, Opinion, Shorts, Ticker, WatchListen,
+  Categories, Footer, Latest, MostRead, Newsletter, Opinion, Shorts, Ticker, WatchListen,
 } from "@/components/Sections";
 
 export default function Home() {
@@ -15,7 +15,6 @@ export default function Home() {
         <Categories />
         <Opinion />
         <MostRead />
-        <Issues />
         <Newsletter />
         <Footer />
       </div>
