@@ -1,6 +1,7 @@
-import { ACCENT, EMAIL, HIGHLIGHT, INSTAGRAM_URL, bg, heroVideo, lead, nav, profile, second, stats, third } from "@/lib/data";
+import { ACCENT, EMAIL, HIGHLIGHT, INSTAGRAM_URL, articleHref, bg, heroVideo, lead, profile, second, stats, third } from "@/lib/data";
 import type { Story } from "@/lib/data";
-import { ArrowUR, Chevron, Comment, Doc, Fire, Heart, Instagram, Mail, Menu, People, PlaySm, Share, Up, XIcon } from "./icons";
+import { ArrowUR, Comment, Doc, Fire, Heart, Instagram, Mail, People, PlaySm, Share, Up, XIcon } from "./icons";
+import { SiteHeader } from "./SiteHeader";
 
 const link = { textDecoration: "none", color: "#111" } as const;
 const small = { width: 12, height: 12, strokeWidth: 2.4 } as const;
@@ -17,44 +18,11 @@ function Title({ s, mark }: { s: Story; mark: React.CSSProperties }) {
 export function Hero() {
   return (
     <div className="shell">
-      <header className="hdr">
-        <div style={{ display: "flex", alignItems: "center", gap: 36, minWidth: 0 }}>
-          <a className="live" href={INSTAGRAM_URL} {...ext} aria-label={`Follow on Instagram, ${profile.followers} followers`} style={{ textDecoration: "none" }}>
-            <Instagram style={{ width: 20, height: 20 }} />
-            <span>{profile.followers}</span>
-            <span className="pb"><ArrowUR /></span>
-          </a>
-          <nav className="nav" aria-label="Sections">
-            {nav.map((n) => (
-              <div className="ni" key={n.label}>
-                <a href="#">{n.label}<Chevron style={{ width: 13, height: 13, color: "#555" }} /></a>
-                <div className="mega">
-                  <div>
-                    <div className="kick" style={{ marginBottom: 8 }}>{n.label}</div>
-                    <ul>{n.subs.map((s) => <li key={s}><a href="#">{s}</a></li>)}</ul>
-                  </div>
-                  <a href={n.story.url} {...ext} className="hov" style={{ ...link, display: "flex", flexDirection: "column", gap: 12 }}>
-                    <div className="ph" style={{ aspectRatio: "16/10" }} role="img" aria-label={n.story.title}><i style={bg(n.story.img)} /></div>
-                    <div className="kick">Featured</div>
-                    <div className="d hl" style={{ fontSize: 26, lineHeight: 1.08 }}>{n.story.title}</div>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </nav>
-        </div>
-        <a href="#" className="d" style={{ fontSize: 58, lineHeight: 1, textDecoration: "none", letterSpacing: "-0.01em", transform: "scaleY(1.18)", display: "inline-block" }} aria-label="March91 home">
-          <span style={{ color: "#5f5f5f" }}>MARCH</span><span style={{ color: "#111" }}>91</span>
-        </a>
-        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 22 }}>
-          <a href={INSTAGRAM_URL} {...ext} className="pill sub" style={{ height: 50, padding: "0 24px", fontSize: 17 }}>Follow on Instagram <ArrowUR /></a>
-          <button className="obtn" type="button" aria-label="Open menu" style={{ border: 0 }}><Menu style={{ width: 28, height: 28, strokeWidth: 1.6 }} /></button>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="bento" aria-label="Top stories">
         {/* Lead story */}
-        <a href={lead.url} {...ext} className="gc lead hov" style={{ ...link, padding: "40px 40px 36px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <a href={articleHref(lead)} className="gc lead hov" style={{ ...link, padding: "40px 40px 36px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
           <div className="ph" style={{ position: "absolute", left: 0, right: 0, top: 0, height: "72%", borderRadius: 0, background: "transparent" }} aria-hidden="true">
             <i style={{ ...bg(lead.img), filter: "saturate(1.1)", backgroundPosition: "50% 35%" }} />
           </div>
@@ -77,7 +45,7 @@ export function Hero() {
 
         {/* Column 2 */}
         <div className="col">
-          <a href={second.url} {...ext} className="gc hov" style={{ ...link, padding: "30px 30px 28px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
+          <a href={articleHref(second)} className="gc hov" style={{ ...link, padding: "30px 30px 28px", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
             <div className="meta" style={{ color: "#111", fontSize: 16 }}><span>{second.kick}</span><span style={{ color: "#555" }}>{second.fullDate}</span></div>
             <div className="ph c2img" style={{ height: 170, width: "74%", alignSelf: "center", borderRadius: 18 }} role="img" aria-label={second.title}><i style={bg(second.img)} /></div>
             <h2 className="d hl" style={{ margin: "6px 0 0", fontSize: 40, lineHeight: 1.04 }}>{second.title}</h2>
@@ -101,7 +69,7 @@ export function Hero() {
             <a href={`mailto:${EMAIL}`} style={{ background: "#EDF5F6", color: "#111" }} aria-label="Email March91"><Mail style={{ width: 30, height: 30, strokeWidth: 1.8 }} /></a>
           </div>
 
-          <a href={heroVideo.url} {...ext} className="gc hov vid" style={{ ...link, height: 236, display: "block" }}>
+          <a href={articleHref(heroVideo)} className="gc hov vid" style={{ ...link, height: 236, display: "block" }}>
             <div className="meta" style={{ position: "relative", zIndex: 2, color: "#333", padding: "24px 30px 0" }}>
               <span><PlaySm />Reel</span>
               <span><Heart />{heroVideo.likes}</span>
@@ -119,7 +87,7 @@ export function Hero() {
 
         {/* Column 3 */}
         <div className="col">
-          <a href={third.url} {...ext} className="gc hov" style={{ ...link, padding: "30px 30px 28px", display: "flex", flexDirection: "column", gap: 24, flex: 1 }}>
+          <a href={articleHref(third)} className="gc hov" style={{ ...link, padding: "30px 30px 28px", display: "flex", flexDirection: "column", gap: 24, flex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <span className="av" style={{ width: 40, height: 40, fontSize: 14 }} aria-hidden="true">M91</span>
               <span style={{ fontSize: 17, flex: 1 }}>{third.kick}</span>
